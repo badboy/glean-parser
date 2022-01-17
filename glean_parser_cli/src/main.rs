@@ -5,7 +5,7 @@ fn main() {
 
     let file = &args[0];
     let data = glean_parser::validate(file).unwrap();
-    println!("{:?}", data);
+    //println!("{:?}", data);
 
-    //glean_parser::run();
+    glean_parser::generate(data);
 }

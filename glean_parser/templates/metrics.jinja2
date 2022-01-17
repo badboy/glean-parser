@@ -1,0 +1,19 @@
+{% for category, metrics in categories|items %}
+class {{category|Camelize}} {
+  {% for metric_name, metric in metrics|items %}
+  let {{ metric_name }} = {{ metric|type_name }}(
+    CommonMetricData(
+      {%- with cm = metric|common_metric_data %}
+      category: {{ category|swift }},
+      name: {{ metric_name|swift }},
+      sendInPings: {{ cm.send_in_pings|swift }},
+      lifetime: {{ cm.lifetime|swift }},
+      {%- endwith %}
+    )
+    {%- for k, v in metric|extra|items %}
+    , {{k|camelize}}: {{ v|swift }}
+    {%- endfor %}
+  )
+  {% endfor %}
+}
+{% endfor %}
