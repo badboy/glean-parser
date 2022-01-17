@@ -1,0 +1,70 @@
+# Any copyright is dedicated to the Public Domain.
+# https://creativecommons.org/publicdomain/zero/1.0/
+
+---
+$schema: moz://mozilla.org/schemas/glean/metrics/2-0-0
+gleantest.foo:
+  a: b
+gleantest:
+  test_event:
+    type: event
+gleantest.lifetime:
+  test_counter_inv_lt:
+    description: A counter with an invalid lifetime
+    type: counter
+    lifetime: user2
+    bugs:
+      - https://bugzilla.mozilla.org/1123456789
+    notification_emails: ['nobody@example.com']
+    expires: never
+    data_reviews: ['http://example.com']
+gleantest.with.way.too.long.category.name:
+  test_event_inv_lt:
+    description: A test metric
+    type: boolean
+    bugs:
+      - https://bugzilla.mozilla.org/1580707
+    notification_emails: ['nobody@example.com']
+    expires: never
+    data_reviews: ['http://example.com']
+gleantest.short.category:
+  very_long_metric_name_this_is_too_long_s_well:
+    description: A test metric
+    type: boolean
+    bugs:
+      - https://bugzilla.mozilla.org/1580707
+    notification_emails: ['nobody@example.com']
+    expires: never
+    data_reviews: ['http://example.com']
+gleantest.event:
+  event_too_many_extras:
+    description: A test event with too many extra keys
+    type: event
+    bugs:
+      - https://bugzilla.mozilla.org/1580707
+    notification_emails: ['nobody@example.com']
+    expires: never
+    data_reviews: ['http://example.com']
+    extra_keys:
+      key_1:
+        description: Sample extra key
+      key_2:
+        description: Sample extra key
+      key_3:
+        description: Sample extra key
+      key_4:
+        description: Sample extra key
+      key_5:
+        description: Sample extra key
+      key_6:
+        description: Sample extra key
+      key_7:
+        description: Sample extra key
+      key_8:
+        description: Sample extra key
+      key_9:
+        description: Sample extra key
+      key_10:
+        description: Sample extra key
+      key_11:
+        description: Sample extra key

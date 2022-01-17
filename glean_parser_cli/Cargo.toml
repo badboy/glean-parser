@@ -1,0 +1,12 @@
+[package]
+name = "glean_parser_cli"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "glean-parser"
+path = "src/main.rs"
+doc = false
+
+[dependencies]
+glean_parser = { path = "../glean_parser" }

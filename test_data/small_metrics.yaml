@@ -1,0 +1,37 @@
+# Any copyright is dedicated to the Public Domain.
+# https://creativecommons.org/publicdomain/zero/1.0/
+
+# Note: we're using YAML anchors to re-use the values
+# defined in the first metric.
+# Saves us some typing.
+---
+$schema: moz://mozilla.org/schemas/glean/metrics/2-0-0
+
+all_metrics:
+  counter: &defaults
+    type: counter
+    lifetime: ping
+    description: for testing
+    bugs:
+      - https://bugzilla.mozilla.org/1137353
+    data_reviews:
+      - http://example.com/
+    notification_emails:
+      - CHANGE-ME@example.com
+    expires: never
+
+  bool:
+    <<: *defaults
+    type: boolean
+
+  quantity:
+    <<: *defaults
+    type: quantity
+    unit: tabs
+
+  labeled_counter:
+    <<: *defaults
+    type: labeled_counter
+    labels:
+      - label_a
+      - label_b

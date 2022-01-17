@@ -1,0 +1,5 @@
+[workspace]
+members = [
+  "glean_parser",
+  "glean_parser_cli"
+]
